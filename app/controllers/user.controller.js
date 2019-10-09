@@ -48,12 +48,14 @@ exports.findOne = (req, res) => {
 
 // Update a User
 exports.update = (req, res) => {
-	UserEntity.findOneAndUpdate({'name': req.body.name},{name: req.body.name,
+    UserEntity.findOneAndUpdate({'name': req.body.name},
+    {   name: req.body.name,
         email: req.body.email,
         phone: req.body.phone,
         imgUrl: req.body.imgUrl,
         password: req.body.password,
-        walletBalance: req.body.walletBalance}, {new: true}, function(err,obj) {res.send(obj)});
+        walletBalance: req.body.walletBalance
+    }, {new: true}, function(err,obj) {res.send(obj)});
 };
 
 // Delete a User
